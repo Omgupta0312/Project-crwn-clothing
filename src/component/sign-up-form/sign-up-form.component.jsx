@@ -36,11 +36,16 @@ const SignUpForm = () => {
 
 
         } catch (error) {
-            console.log('user creation encountered an error ', error);
+            if (error.code === 'auth/email-already-in-use') {
+                alert('Cannot create user, email already in use');
+            } else {
+                console.log('user creation encountered an error', error);
+            }
+
         }
     }
 
-    console.log(formFields);
+
     const handleChange = (event) => {
         const { name, value } = event.target;
 
@@ -93,8 +98,8 @@ const SignUpForm = () => {
                 />
 
                 <Button
-                buttonType='google'
-                 type="submit">SignUp
+                    buttonType='google'
+                    type="submit">Sign Up
                 </Button>
 
             </form>

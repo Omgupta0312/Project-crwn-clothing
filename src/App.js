@@ -2,11 +2,8 @@ import { Routes, Route ,} from "react-router-dom"
 import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component"
-
-
-const Shop1 = () => (
-   <h1> This is Shop1 </h1>
-);
+import Shop from './routes/shop/shop.component';
+import Checkout from './routes/checkout/checkout.component';
 
 
 const App = () => {
@@ -14,13 +11,13 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="shop1" element={<Shop1 />} />
+        <Route path="shop" element={<Shop />} />
         <Route path="Auth" element={<Authentication />} />
-        
+        <Route path='checkout' element={<Checkout />} />
       </Route>
     </Routes>
 
   );
-}
+};
 
 export default App;
